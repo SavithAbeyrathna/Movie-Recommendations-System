@@ -1,0 +1,66 @@
+[
+  {
+    "id": "tom-hanks",
+    "name": "Tom Hanks",
+    "image": "https://image.tmdb.org/t/p/w500/xxPMucou2wRDxLrud8i2D4dsywh.jpg",
+    "movies": [
+      {
+        "id": 1,
+        "title": "Forrest Gump",
+        "poster_path": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Cast Away",
+        "poster_path": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Saving Private Ryan",
+        "poster_path": "https://image.tmdb.org/t/p/w500/miDoEMlYDJhOCvxlzI0wZqBs9Yt.jpg"
+      },
+      {
+        "id": 4,
+        "title": "The Green Mile",
+        "poster_path": "https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Toy Story",
+        "poster_path": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg"
+      }
+    ]
+  },
+  {
+    "id": "leonardo-dicaprio",
+    "name": "Leonardo DiCaprio",
+    "image": "https://image.tmdb.org/t/p/w500/w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg",
+    "movies": [
+      {
+        "id": 6,
+        "title": "Inception",
+        "poster_path": "https://cnhspawprint.com/wp-content/uploads/2022/11/MV5BZGFjOTRiYjgtYjEzMS00ZjQ2LTkzY2YtOGQ0NDI2NTVjOGFmXkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_-607x900.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Titanic",
+        "poster_path": "https://m.media-amazon.com/images/I/81n3QXOwA1L._AC_UF894,1000_QL80_.jpg"
+      },
+      {
+        "id": 8,
+        "title": "The Wolf of Wall Street",
+        "poster_path": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg"
+      },
+      {
+        "id": 9,
+        "title": "The Revenant",
+        "poster_path": "https://image.tmdb.org/t/p/w500/oXUWEc5i3wYyFnL1Ycu8ppxxPvs.jpg"
+      },
+      {
+        "id": 10,
+        "title": "Shutter Island",
+        "poster_path": "https://image.tmdb.org/t/p/w500/kve20tXwUZpu4GUX8l6X7Z4jmL6.jpg"
+      }
+    ]
+  }
+]
