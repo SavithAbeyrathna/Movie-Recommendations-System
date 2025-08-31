@@ -1,3 +1,4 @@
+
 const StatsSection = () => {
   return (
     <div className="bg-black text-white py-16 px-6">
@@ -35,7 +36,6 @@ const StatsSection = () => {
           Fresh Picks, Always – New movies are constantly added to keep recommendations exciting.
         </p>
       </div>
-
       <div className="max-w-6xl mx-auto text-left mt-12">
         <h2 className="text-4xl font-bold mb-6">What Makes This Movie Recommendation Engine Unique?</h2>
         <ul className="text-lg text-gray-300 list-disc list-inside">

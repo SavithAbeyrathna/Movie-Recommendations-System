@@ -1,66 +1,202 @@
 [
   {
-    "id": "tom-hanks",
-    "name": "Tom Hanks",
-    "image": "https://image.tmdb.org/t/p/w500/xxPMucou2wRDxLrud8i2D4dsywh.jpg",
-    "movies": [
-      {
-        "id": 1,
-        "title": "Forrest Gump",
-        "poster_path": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
-      },
-      {
-        "id": 2,
-        "title": "Cast Away",
-        "poster_path": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
-      },
-      {
-        "id": 3,
-        "title": "Saving Private Ryan",
-        "poster_path": "https://image.tmdb.org/t/p/w500/miDoEMlYDJhOCvxlzI0wZqBs9Yt.jpg"
-      },
-      {
-        "id": 4,
-        "title": "The Green Mile",
-        "poster_path": "https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg"
-      },
-      {
-        "id": 5,
-        "title": "Toy Story",
-        "poster_path": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg"
-      }
-    ]
+    "id": "leonardo-dicaprio",
+    "name": "Leonardo DiCaprio"
   },
   {
-    "id": "leonardo-dicaprio",
-    "name": "Leonardo DiCaprio",
-    "image": "https://image.tmdb.org/t/p/w500/w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg",
-    "movies": [
-      {
-        "id": 6,
-        "title": "Inception",
-        "poster_path": "https://cnhspawprint.com/wp-content/uploads/2022/11/MV5BZGFjOTRiYjgtYjEzMS00ZjQ2LTkzY2YtOGQ0NDI2NTVjOGFmXkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_-607x900.jpg"
-      },
-      {
-        "id": 7,
-        "title": "Titanic",
-        "poster_path": "https://m.media-amazon.com/images/I/81n3QXOwA1L._AC_UF894,1000_QL80_.jpg"
-      },
-      {
-        "id": 8,
-        "title": "The Wolf of Wall Street",
-        "poster_path": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg"
-      },
-      {
-        "id": 9,
-        "title": "The Revenant",
-        "poster_path": "https://image.tmdb.org/t/p/w500/oXUWEc5i3wYyFnL1Ycu8ppxxPvs.jpg"
-      },
-      {
-        "id": 10,
-        "title": "Shutter Island",
-        "poster_path": "https://image.tmdb.org/t/p/w500/kve20tXwUZpu4GUX8l6X7Z4jmL6.jpg"
-      }
-    ]
+    "id": "matthew-mcconaughey",
+    "name": "Matthew McConaughey"
+  },
+  {
+    "id": "christian-bale",
+    "name": "Christian Bale"
+  },
+  {
+    "id": "sam-worthington",
+    "name": "Sam Worthington"
+  },
+  {
+    "id": "robert-downey-jr",
+    "name": "Robert Downey Jr."
+  },
+  {
+    "id": "ryan-reynolds",
+    "name": "Ryan Reynolds"
+  },
+  {
+    "id": "joe-russo",
+    "name": "Joe Russo"
+  },
+  {
+    "id": "brad-pitt",
+    "name": "Brad Pitt"
+  },
+  {
+    "id": "chris-pratt",
+    "name": "Chris Pratt"
+  },
+  {
+    "id": "john-travolta",
+    "name": "John Travolta"
+  },
+  {
+    "id": "tom-hanks",
+    "name": "Tom Hanks"
+  },
+  {
+    "id": "jamie-foxx",
+    "name": "Jamie Foxx"
+  },
+  {
+    "id": "tim-robbins",
+    "name": "Tim Robbins"
+  },
+  {
+    "id": "lilly-wachowski",
+    "name": "Lilly Wachowski"
+  },
+  {
+    "id": "joaquin-phoenix",
+    "name": "Joaquin Phoenix"
+  },
+  {
+    "id": "elijah-wood",
+    "name": "Elijah Wood"
+  },
+  {
+    "id": "chadwick-boseman",
+    "name": "Chadwick Boseman"
+  },
+  {
+    "id": "tom-hardy",
+    "name": "Tom Hardy"
+  },
+  {
+    "id": "jennifer-lawrence",
+    "name": "Jennifer Lawrence"
+  },
+  {
+    "id": "tom-holland",
+    "name": "Tom Holland"
+  },
+  {
+    "id": "daniel-radcliffe",
+    "name": "Daniel Radcliffe"
+  },
+  {
+    "id": "chris-hemsworth",
+    "name": "Chris Hemsworth"
+  },
+  {
+    "id": "ronnie-del-carmen",
+    "name": "Ronnie Del Carmen"
+  },
+  {
+    "id": "amy-poehler",
+    "name": "Amy Poehler"
+  },
+  {
+    "id": "morgan-freeman",
+    "name": "Morgan Freeman"
+  },
+  {
+    "id": "johnny-depp",
+    "name": "Johnny Depp"
+  },
+  {
+    "id": "mark-hamill",
+    "name": "Mark Hamill"
+  },
+  {
+    "id": "bob-peterson",
+    "name": "Bob Peterson"
+  },
+  {
+    "id": "edward-asner",
+    "name": "Edward Asner"
+  },
+  {
+    "id": "marlon-brando",
+    "name": "Marlon Brando"
+  },
+  {
+    "id": "matt-damon",
+    "name": "Matt Damon"
+  },
+  {
+    "id": "michael-j-fox",
+    "name": "Michael J. Fox"
+  },
+  {
+    "id": "hugh-jackman",
+    "name": "Hugh Jackman"
+  },
+  {
+    "id": "lee-unkrich",
+    "name": "Lee Unkrich"
+  },
+  {
+    "id": "albert-brooks",
+    "name": "Albert Brooks"
+  },
+  {
+    "id": "bill-skarsgård",
+    "name": "Bill Skarsgård"
+  },
+  {
+    "id": "keanu-reeves",
+    "name": "Keanu Reeves"
+  },
+  {
+    "id": "adrian-molina",
+    "name": "Adrian Molina"
+  },
+  {
+    "id": "chris-evans",
+    "name": "Chris Evans"
+  },
+  {
+    "id": "ben-burtt",
+    "name": "Ben Burtt"
+  },
+  {
+    "id": "ben-affleck",
+    "name": "Ben Affleck"
+  },
+  {
+    "id": "martin-freeman",
+    "name": "Martin Freeman"
+  },
+  {
+    "id": "david-silverman",
+    "name": "David Silverman"
+  },
+  {
+    "id": "rob-minkoff",
+    "name": "Rob Minkoff"
+  },
+  {
+    "id": "russell-crowe",
+    "name": "Russell Crowe"
+  },
+  {
+    "id": "jim-carrey",
+    "name": "Jim Carrey"
+  },
+  {
+    "id": "craig-t-nelson",
+    "name": "Craig T. Nelson"
+  },
+  {
+    "id": "amy-adams",
+    "name": "Amy Adams"
+  },
+  {
+    "id": "robert-glaudini",
+    "name": "Robert Glaudini"
+  },
+  {
+    "id": "jack-nicholson",
+    "name": "Jack Nicholson"
   }
 ]

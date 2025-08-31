@@ -70,7 +70,7 @@ const Navbar = () => {
               Top Actors 
             </button>
             {isActorsOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md">
+              <div className="absolute left-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md scroll-y-auto max-h-90 overflow-scroll">
                 {actorsData.map((actor) => (
                   <Link 
                     key={actor.id} 

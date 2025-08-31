@@ -1,62 +1,42 @@
-import { useState } from "react";
-import MovieBlogCard from "../../components/MovieBlogCard/MovieBlogCard";
-import moviesData from "../../Data/data.json"; // Import JSON file
-
-const itemsPerPage = 4;
+import React, { useState } from "react";
+import SingleMovieCard from "../../components/SingleMovieCard/SingleMovieCard"; // Adjust path as needed
 
 const BlogPage = () => {
-  const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(moviesData.length / itemsPerPage);
+  // 1. State to control the visibility of the movie card
+  const [showCard, setShowCard] = useState(false);
 
-  // Get movies for the current page
-  const displayedMovies = moviesData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
-
-  // Pagination handlers
-  const handleNextPage = () => {
-    if (page < totalPages) setPage(page + 1);
-  };
-
-  const handlePrevPage = () => {
-    if (page > 1) setPage(page - 1);
+  // 2. Dummy data for the movie card component
+  const dummyMovieData = {
+    title: "Inception",
+    year: 2010,
+    rating: 8.8,
+    runtime: 148,
+    genres: "Action, Adventure, Sci-Fi",
+    director: "Christopher Nolan",
+    actors: "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page",
+    posterLink: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+    imdbLink: "https://www.imdb.com/title/tt1375666/",
   };
 
   return (
-    <div className="bg-black min-h-screen text-white py-10 px-4">
-      <h1 className="text-4xl text-center font-bold mb-8 pt-10">Movie Blogs</h1>
-
-      {/* Displaying Movie Blogs */}
-      <div className="space-y-6">
-        {displayedMovies.map((movie) => (
-          <MovieBlogCard
-            key={movie.id}
-            title={movie.title}
-            description={movie.overview}
-            image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            date={movie.release_date}
-          />
-        ))}
-      </div>
-
-      {/* Pagination Controls */}
-      <div className="flex justify-center gap-4 mt-8">
+    <div className="relative min-h-screen bg-black flex flex-col items-center justify-center p-4">
+      {/* 3. Show the button only if the card is not visible */}
+      {!showCard && (
         <button
-          onClick={handlePrevPage}
-          disabled={page === 1}
-          className="bg-gray-700 px-4 py-2 rounded disabled:opacity-50"
+          onClick={() => setShowCard(true)}
+          className="px-6 py-3 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-colors duration-300"
         >
-          Previous
+          Show Movie Recommendation
         </button>
-        <span className="self-center">
-          Page {page} of {totalPages}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={page === totalPages}
-          className="bg-gray-700 px-4 py-2 rounded disabled:opacity-50"
-        >
-          Next
-        </button>
-      </div>
+      )}
+
+      {/* 4. Conditionally render the MovieRecommendationCard when showCard is true */}
+      {showCard && (
+        <SingleMovieCard
+          {...dummyMovieData}
+          onNextRecommendation={() => setShowCard(false)} // This button will hide the card
+        />
+      )}
     </div>
   );
 };
