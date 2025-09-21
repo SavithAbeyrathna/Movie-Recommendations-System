@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Popup from "../Popup/Popup";
-import MovieRecommendationCard from "../../components/MovieRecommendationCard/MovieRecommendationCard"; // Adjust path as needed
+import MovieRecommendationCard from "../../components/MovieRecommendationCard/MovieRecommendationCard";
 import axiosInstance from "../../apis/axios";
 
 const HeroSection = () => {
@@ -11,14 +11,9 @@ const HeroSection = () => {
   const [recommendationList, setRecommendationList] = useState([]);
   const [recommendedMovie, setRecommendedMovie] = useState(null);
 
-  // This function is now correctly mapped to the card's props.
-  // It's used by the "Get Another Recommendation" button.
   const setNextRecommendation = () => {
     if (recommendationList.length === 0) return;
-   
     const data = recommendationList[recommendationIndex];
-  
-    // Correctly map backend data (e.g., poster_link) to component props (e.g., posterLink)
     const movieData = {
       title: data.title,
       year: data.year,
@@ -28,31 +23,22 @@ const HeroSection = () => {
       genres: data.genres,
       director: data.director,
       actors: data.actors,
-      posterLink: data.poster_link, // snake_case from backend to camelCase for prop
-      imdbLink: data.imdb_link,     // snake_case from backend to camelCase for prop
+      posterLink: data.poster_link,
+      imdbLink: data.imdb_link,
     };
-
     setRecommendedMovie(movieData);
-
-    // Prepare the index for the next click
     const nextIndex = (recommendationIndex + 1) % recommendationList.length;
     setRecommendationIndex(nextIndex);
   };
 
-  // This function is updated to handle the initial API response correctly.
   const handleSubmit = async () => {
     if (!prompt.trim()) return;
     setLoading(true);
-
     axiosInstance.post('/recommend', { prompt })
       .then(response => {
         const recommendations = response.data.recommendations || [];
-        
         if (recommendations.length > 0) {
-          // Set the entire list of recommendations
           setRecommendationList(recommendations);
-
-          // Manually create and display the FIRST movie from the list
           const firstMovieData = recommendations[0];
           setRecommendedMovie({
             title: firstMovieData.title,
@@ -66,42 +52,50 @@ const HeroSection = () => {
             posterLink: firstMovieData.poster_link,
             imdbLink: firstMovieData.imdb_link,
           });
-
-          // Set the index to 1 for the *next* recommendation
           setRecommendationIndex(1);
         } else {
-          // If no recommendations are found, clear the state
           setRecommendationList([]);
           setRecommendedMovie(null);
         }
       })
       .catch(error => {
         console.error("Error fetching recommendation:", error);
-        // Clear out old recommendations on error
         setRecommendationList([]);
         setRecommendedMovie(null);
       })
       .finally(() => {
         setShowPopup(false);
         setLoading(false);
+        setPrompt(""); // Clears the input field for the next use
       });
   };
 
+  // Handles closing the recommendation card
+  const handleCloseCard = () => {
+    setRecommendedMovie(null);
+  };
+
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center text-center px-4 py-10">
-      {/* Background Video */}
+    <div className="relative w-full min-h-screen flex items-center justify-center text-center px-4 py-10 overflow-hidden">
+      {/* Background Video with conditional blur */}
       <video
         autoPlay
         loop
         muted
-        className="absolute inset-0 w-full h-full object-cover brightness-50"
+        className={`absolute inset-0 w-full h-full object-cover brightness-50 transition-all duration-500 ${
+          recommendedMovie ? 'blur-md scale-110' : 'blur-none scale-100'
+        }`}
       >
         <source src="/BGvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Content */}
-      <div className="relative z-10 text-white max-w-4xl w-full">
+      {/* Main Content with conditional blur */}
+      <div
+        className={`relative z-10 text-white max-w-4xl w-full transition-all duration-500 ${
+          recommendedMovie ? 'blur-md' : 'blur-none'
+        }`}
+      >
         <h1 className="text-5xl md:text-6xl font-bold">
           MOVIE <span className="text-red-500">RECOMMENDATION</span> SYSTEM
         </h1>
@@ -112,33 +106,27 @@ const HeroSection = () => {
           className="mt-6 px-6 py-3 bg-transparent border border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300"
           onClick={() => setShowPopup(true)}
         >
-          Start Now
+          Click to get Recommendation
         </button>
-
-        {/* Movie Card - Props are now passed correctly */}
-        {recommendedMovie && (
-          <div className="mt-10">
-            <MovieRecommendationCard
-              {...recommendedMovie} // Use spread operator to pass all correct props
-              onNextRecommendation={setNextRecommendation}
-            />
-          </div>
-        )}
       </div>
+
+      {/* Movie Card is rendered on top of the blurred content */}
+      {recommendedMovie && (
+        <div className="absolute z-20">
+          <MovieRecommendationCard
+            {...recommendedMovie}
+            onNextRecommendation={setNextRecommendation}
+            onClose={handleCloseCard} 
+          />
+        </div>
+      )}
 
       {/* Popup */}
       {showPopup && (
         <Popup
           title="Get Recommendation"
           onClose={() => setShowPopup(false)}
-          actions={[
-            {
-              label: loading ? "Finding Movies..." : "Submit",
-              className: "bg-red-600 hover:bg-red-700 text-white",
-              onClick: handleSubmit,
-              disabled: loading,
-            },
-          ]}
+          actions={[{ label: loading ? "Finding Movies..." : "Submit", className: "bg-red-600 hover:bg-red-700 text-white", onClick: handleSubmit, disabled: loading }]}
         >
           <input
             type="text"
