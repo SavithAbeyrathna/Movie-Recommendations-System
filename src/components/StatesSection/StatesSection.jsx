@@ -10,7 +10,7 @@ const AnimatedNumber = ({ value }) => {
   useEffect(() => {
     if (isInView) {
       animate(0, value, {
-        duration: 2,
+        duration: 4,
         ease: "easeOut",
         onUpdate: (latest) => {
           scope.current.textContent = Math.round(latest).toLocaleString();

@@ -30,7 +30,6 @@ const GenrePage = () => {
       });
   }, [genre]);
 
-  // This second useEffect is redundant and has been removed for cleaner logic.
 
   const showMoreMovies = (pageNumber) => {
     const startIndex = (pageNumber - 1) * moviesPerPage;

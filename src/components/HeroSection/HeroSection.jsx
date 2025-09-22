@@ -106,7 +106,7 @@ const HeroSection = () => {
           className="mt-6 px-6 py-3 bg-transparent border border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300"
           onClick={() => setShowPopup(true)}
         >
-          Click to get Recommendation
+          Click here
         </button>
       </div>
 
